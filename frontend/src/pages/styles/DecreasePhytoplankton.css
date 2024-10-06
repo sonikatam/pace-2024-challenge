@@ -1,0 +1,106 @@
+.algae-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height to cover the viewport */
+    background-image: url('./assets/ocean_bg.png'); /* Set ocean background */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align items at the start vertically */
+    padding-top: 20px; /* Add some padding to the top */
+}
+
+.title {
+    margin-bottom: 10px; /* Adjust as needed to move the title closer to the top */
+    font-size: 2rem; /* Change size if necessary */
+}
+
+.next-button {
+    margin-top: 10px; /* Adjust as needed to move the button closer to the title */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Small algae styles */
+.small-algae {
+    position: absolute;
+    transition: transform 6s ease-in-out; /* Adjusted for faster movement */
+    animation: fadeIn 2s forwards;
+}
+
+.small-algae.bottom-left-image {
+    left: 20%; /* Position in the bottom left */
+    bottom: 20%; /* Position in the bottom */
+    animation: moveLeftToCenter 6s forwards; /* Animate movement */
+}
+
+.small-algae.bottom-right-image {
+    left: 70%; /* Position in the bottom right */
+    bottom: 20%;
+    animation: moveRightToCenter 6s forwards; /* Animate movement */
+}
+
+.small-algae.middle-image {
+    left: 45%; /* Position in the center */
+    bottom: 20%;
+    animation: moveDownToCenter 6s forwards; /* Animate movement */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start as invisible */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
+/* Keyframes for movement */
+@keyframes moveLeftToCenter {
+    0% {
+        transform: translate(0, 0); /* Start at the original position */
+    }
+    100% {
+        transform: translate(22vw, -13vh); /* Move to center */
+    }
+}
+
+@keyframes moveRightToCenter {
+    0% {
+        transform: translate(0, 0); /* Start at the original position */
+    }
+    100% {
+        transform: translate(-22vw, -12vh); /* Move to center */
+    }
+}
+
+@keyframes moveDownToCenter {
+    0% {
+        transform: translate(0, 0); /* Start at the original position */
+    }
+    100% {
+        transform: translate(0, -11vh); /* Move upward towards the center */
+    }
+}
+
+/* Big algae styles */
+.big-algae {
+    width: 300px; /* Adjust size as needed */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 10%); /* Slightly offset from center */
+    display: block;
+    opacity: 0; /* Start as invisible */
+    transition: opacity 6s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Class to apply when you want to make it visible */
+.big-algae.visible {
+    opacity: 1; /* Fully visible */
+}

@@ -1,0 +1,42 @@
+.algae-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.small-algae-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: moveToCenter 5s forwards; /* Animation to move toward center */
+}
+
+.small-algae {
+    width: 100px; /* Adjust size as needed */
+    margin: 0 10px; /* Space between algae */
+    animation: fadeIn 5s; /* Fade in effect */
+}
+
+.big-algae {
+    width: 300px; /* Size of the big algae */
+}
+
+@keyframes moveToCenter {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
