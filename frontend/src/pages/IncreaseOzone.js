@@ -93,12 +93,14 @@ const IncreaseOzone = ({ onChoice }) => {
                     className={'uv04'} // Add visible class based on state
                 />
             )}
+
             {/* Next button */}
             {showNextButton && (
-                <button className="next-button" onClick={() => onChoice("startingMenu")}>
+                <button className="next-button" onClick={() => onChoice("PolarizationGood")}>
                     Next
                 </button>
             )}
+
         </div>
     );
 };

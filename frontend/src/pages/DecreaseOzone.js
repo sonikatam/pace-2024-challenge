@@ -85,12 +85,7 @@ const DecreaseOzone = ({ onChoice }) => {
                     className={'cfc2'} // Add visible class based on state
                 />
             )}
-            {/* Next button */}
-            {showNextButton && (
-                <button className="next-button" onClick={() => onChoice("startingMenu")}>
-                    Next
-                </button>
-            )}
+
             {/* UV rays smh */}
             {(
                 <img
@@ -123,6 +118,13 @@ const DecreaseOzone = ({ onChoice }) => {
                     width="120vw"
                     className={'uv4'} // Add visible class based on state
                 />
+            )}
+
+            {/* Next button */}
+            {showNextButton && (
+                <button className="next-button" onClick={() => onChoice("PolarizationBad")}>
+                    Next
+                </button>
             )}
         </div>
     );

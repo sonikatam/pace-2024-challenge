@@ -5,12 +5,6 @@ const QuestionSelector = ({ onChoice }) => {
     // Define an array of ozone-related questions
     const questions = [
         {
-            text: "Hey, wake up! We need your help right now to save the world!",
-            options: [
-                { label: "Proceed", scene: "OzoneQuestions" }
-            ]
-        },
-        {
             text: "You’ve developed a new air-purifying machine that removes pollutants and increases local oxygen levels. A corporation offers to buy the patent but might misuse it.",
             options: [
                 { label: "License responsibly and promote eco-friendly use", scene: "IncreaseOzone" },

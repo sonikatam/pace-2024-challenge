@@ -37,13 +37,13 @@
     animation: moveLeftToCenter 6s forwards; /* Animate movement */
 }
 
-increase.small-algae.bottom-right-image {
+.increase.small-algae.bottom-right-image {
     left: 70%; /* Position in the bottom right */
     bottom: 20%;
     animation: moveRightToCenter 6s forwards; /* Animate movement */
 }
 
-increase.small-algae.middle-image {
+.increase.small-algae.middle-image {
     left: 45%; /* Position in the center */
     bottom: 20%;
     animation: moveDownToCenter 6s forwards; /* Animate movement */
