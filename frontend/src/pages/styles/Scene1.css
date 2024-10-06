@@ -1,0 +1,37 @@
+/* scene1.css */
+
+/* Full screen background for the scene */
+.scene1-container {
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align items to the bottom */
+    background-image: url('./assets/home_screen.gif'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+}
+
+/* Optional: Use for centering content, but we will handle the speech bubble via bubbles.css */
+.scene-content {
+    z-index: 1; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 10px;
+}
+
+.bottom-right-image {
+    position: absolute; /* Positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 400px; 
+    height: auto;
+    margin-right: -60px;
+    margin-bottom: -15px;
+    z-index: 2; /* Ensure it's above the background */
+}

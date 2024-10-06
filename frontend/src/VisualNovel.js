@@ -1,43 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import routes from './routes';
+import routes from './routes'; // Importing your routes for dynamic scenes
 
 const VisualNovel = () => {
-    const [sceneId, setSceneId] = useState(null);
+    const [sceneId, setSceneId] = useState(null); // Track the current scene ID
     const [error, setError] = useState(null); // To handle any errors
 
+    // Fetch the story's first scene on component mount
     useEffect(() => {
         const fetchStory = async () => {
             try {
                 const response = await axios.get('http://127.0.0.1:5000/api/story');
-                setSceneId(response.data.scenes[0].id); // Start with the first scene
+                setSceneId(response.data.scenes[0].id); // Set the first scene's ID
             } catch (error) {
                 console.error("Error fetching story:", error);
                 setError("There was an error fetching the story. Please try again later.");
             }
         };
 
-        fetchStory();
+        fetchStory(); // Trigger the fetch on component mount
     }, []);
 
+    // Handle the user selecting a choice in the scene, which updates the sceneId
     const handleChoice = (nextSceneId) => {
         setSceneId(nextSceneId);
     };
 
-    if (error) return <div>{error}</div>; // Display error message if there is one
-        // Check if sceneId is null or not
-        if (!sceneId) return <div>Loading...</div>;
+    // Display an error message if the story fetch fails
+    if (error) return <div>{error}</div>;
 
-        // Get the appropriate scene component based on the current scene ID
-        const CurrentScene = routes[sceneId];
-    
-        // Render the current scene and pass the handleChoice function to it
-        return (
-            <div>
-                <CurrentScene onChoice={handleChoice} />
-            </div>
-        );
-    };
-    
-    export default VisualNovel;
-    
+    // Display a loading message if the scene hasn't loaded yet
+    if (!sceneId) return <div>Loading...</div>;
+
+    // Dynamically select the scene component based on the current scene ID
+    const CurrentScene = routes[sceneId];
+
+    // Render the selected scene, passing the choice handler down as a prop
+    return (
+        <div className="scene-container">
+            <CurrentScene onChoice={handleChoice} />
+        </div>
+    );
+};
+
+export default VisualNovel;

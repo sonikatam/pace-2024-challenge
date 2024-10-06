@@ -1,0 +1,93 @@
+.bubble {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Use pixelated font */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-left: -160px;
+    line-height: 1.3em;
+    background-color: #fff; /* White background for bubble */
+    color: #000; /* Text color */
+    padding: 5px;
+    box-shadow: 0 -4px #fff, 
+                0 -8px #000, 
+                4px 0 #fff, 
+                4px -4px #000, 
+                8px 0 #000, 
+                0 4px #fff, 
+                0 8px #000, 
+                -4px 0 #fff, 
+                -4px  4px #000, 
+                -8px 0 #000, 
+                -4px -4px #000, 
+                4px 4px #000;
+    width: 70vw;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 4px; /* Tail height */
+        width: 4px; /* Tail width */
+        top: 21px; /* Adjusted to position vertically */
+        right: -8px; /* Positioned to the right of the bubble */
+        background: #fff; /* White background for the tail */
+        box-shadow: 
+            4px -4px #fff, /* Shadow effects */
+            4px 0 #fff,
+            8px 0 #fff,
+            0 -8px #fff,
+            4px 4px #000, 
+            8px 4px #000,
+            12px 4px #000,
+            16px 4px #000,
+            12px 0 #000, 
+            8px -4px #000, 
+            4px -8px #000,
+            0 -4px #fff; /* Additional shadow effects */
+    }
+}
+
+/* Position the bubble at the bottom */
+.bubble.bottom {
+    margin-bottom: 50px; /* Space from the bottom */
+}
+
+/* Add a pixelated shadow effect */
+.bubble.shadow {
+    box-shadow: 0 -4px #fff, 
+                0 -8px #000, 
+                4px 0 #fff, 
+                4px -4px #000, 
+                8px 0 #000, 
+                0 4px #fff, 
+                0 8px #000, 
+                -4px 0 #fff, 
+                -4px  4px #000, 
+                -8px 0 #000, 
+                -4px -4px #000, 
+                4px 4px #000, 
+                4px 12px rgba(0, 0, 0, 0.1), 
+                12px 4px rgba(0, 0, 0, 0.1), 
+                8px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Button styling inside the bubble */
+.choices button {
+    font-family: 'Press Start 2P', cursive; /* Use pixelated font for buttons */
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #fff; /* Button background */
+    border: 3px solid #000; /* Button border */
+    box-shadow: 5px 5px 0 #000, -5px 5px 0 #000; /* Pixelated button shadow */
+    cursor: pointer;
+    color: #000; /* Button text color */
+    transition: background-color 0.2s; /* Transition for hover */
+}
+
+/* Button hover effect */
+.choices button:hover {
+    background-color: #f0f0f0; /* Lighter hover effect */
+}

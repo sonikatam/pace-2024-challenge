@@ -4,7 +4,6 @@ import VisualNovel from './VisualNovel';
 const App = () => {
     return (
         <div>
-            <h1>Visual Novel</h1>
             <VisualNovel />
         </div>
     );
