@@ -12,19 +12,28 @@
     padding-top: 20px; /* Add some padding to the top */
     color: white;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .title {
     margin-bottom: 10px; /* Adjust as needed to move the title closer to the top */
     font-size: 2rem; /* Change size if necessary */
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .next-button {
     margin-top: 10px; /* Adjust as needed to move the button closer to the title */
     padding: 10px 20px; /* Button padding */
     font-size: 1rem; /* Button font size */
     cursor: pointer; /* Change cursor to pointer */
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .ozone1 {
     position: fixed;
     top: 50vh;
@@ -53,21 +62,30 @@
     transition: transform 6s ease-in-out; /* Adjusted for faster movement */
     animation: fadeOut 2s forwards;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .cfc1 {
     position: fixed;
     top: 55vh;
     left: 30vw;
     animation: rotate1 5s infinite;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .cfc2 {
     position: fixed;
     top: 58vh;
     left: 58vw;
     animation: rotate2 5s infinite;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 .uv1 {
     position: fixed;
     top: 55vh;
@@ -92,7 +110,10 @@
     left: 78vw;
     animation: fallToEarth 5s;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 /* Fade-in animation */
 @keyframes fadeIn {
     0% {
@@ -102,16 +123,25 @@
         opacity: 1; /* Fully visible */
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 /* rotation */
 @keyframes rotate2 {
     50% {transform: rotate(360deg);}
 }
+<<<<<<< HEAD
 
 @keyframes rotate1 {
     50% {transform: rotate(-360deg);}
 }
 
+=======
+@keyframes rotate1 {
+    50% {transform: rotate(-360deg);}
+}
+>>>>>>> fe64b23 (added jia's)
 /* Fade-out animation */
 @keyframes fadeOut {
     0% {
@@ -121,7 +151,10 @@
         opacity: 0; /* Fully invisible */
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe64b23 (added jia's)
 /* Keyframes for movement */
 @keyframes fallToEarth {
     from {
@@ -132,4 +165,8 @@
         opacity: 1;
         transform : translateY(0px);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fe64b23 (added jia's)
