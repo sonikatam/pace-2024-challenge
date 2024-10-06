@@ -13,7 +13,7 @@ const Scene2 = ({ onChoice }) => {
 
             {/* Wrap the button inside a div with class "choices" */}
             <div className="choices">
-                <button onClick={() => onChoice("scene3")}>
+                <button onClick={() => onChoice()}>
                     Start your adventure!
                 </button>
             </div>
