@@ -8,13 +8,14 @@ const VisualNovel = () => {
 
     useEffect(() => {
         const fetchStory = async () => {
-            try {
+//            try {
                 const response = await axios.get('http://127.0.0.1:5000/api/story');
                 setSceneId(response.data.scenes[0].id); // Start with the first scene
-            } catch (error) {
-                console.error("Error fetching story:", error);
-                setError("There was an error fetching the story. Please try again later.");
-            }
+//              }
+//            } catch (error) {
+//                console.error("Error fetching story:", error);
+//                setError("There was an error fetching the story. Please try again later.");
+//            }
         };
 
         fetchStory();
