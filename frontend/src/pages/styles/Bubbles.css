@@ -72,22 +72,28 @@
                 8px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Choices container */
+.choices {
+    display: flex;
+    justify-content: center;  /* Center button horizontally */
+    align-items: center;
+    width: 100%; /* Make sure the container stretches across the screen */
+}
 
-
-/* Button styling inside the bubble */
+/* Button styling */
 .choices button {
     font-family: 'Press Start 2P', cursive; /* Use pixelated font for buttons */
     padding: 10px 20px;
-    margin: 5px;
     background-color: #fff; /* Button background */
     border: 3px solid #000; /* Button border */
     box-shadow: 5px 5px 0 #000, -5px 5px 0 #000; /* Pixelated button shadow */
     cursor: pointer;
     color: #000; /* Button text color */
     transition: background-color 0.2s; /* Transition for hover */
+    margin: 0 auto;  /* Center the button horizontally */
 }
 
 /* Button hover effect */
 .choices button:hover {
-    background-color: #f0f0f0; /* Lighter hover effect */
+    background-color: #e0e0e0; /* Lighter hover effect */
 }

@@ -1,13 +1,10 @@
-/* Full screen background for the scene */
 .scene2-container {
     height: 100vh; /* Full viewport height */
     width: 100vw;  /* Full viewport width */
     display: flex; /* Flexbox for centering */
-    bottom: 0;
-    top: 0;
-    position: fixed;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-end; /* Align items to the bottom */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     background-image: url('./assets/Starting\ Menu.png'); 
     background-size: cover; 
     background-position: center;
@@ -23,6 +20,26 @@
     text-align: center;
     font-family: 'Press Start 2P', cursive; /* Use pixelated font */
     font-size: 60px; /* Adjust font size as needed */
+    margin: 0; /* Remove margin to ensure proper centering */
+    padding-bottom: 5vh; /* Space between the text and image */
+    padding-top: 5vh;
+}
+
+/* Image styles */
+.centered-image {
+    max-width: 55%; /* Limit image size to 50% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    padding-bottom: 5vh; /* Space between image and button */
+    padding-left: 15vh;
+}
+
+/* Text styles */
+.scene2-text {
+    color: white; /* Text color */
+    text-align: center;
+    position: fixed;
+    font-family: 'Press Start 2P', cursive; /* Use pixelated font */
+    font-size: 60px; /* Adjust font size as needed */
     margin-bottom: 85vh; /* Space below the heading */
 }
 
@@ -31,4 +48,53 @@
     font-size: 20px; /* Font size */
     text-align: center; /* Center the text */
     max-width: 600px; /* Limit width for readability */
+    position: fixed;
 }
+
+/* Styles for the open button */
+.open-button {
+    font-family: 'Press Start 2P', cursive; /* Use pixelated font for button */
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000, -5px 5px 0 #000;
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    bottom: 20px; /* Position at the bottom */
+    right: 20px; /* Align with the left corner */
+    z-index: 1000; /* Ensure button appears above other elements */
+}
+
+/* Button hover effect */
+.open-button:hover {
+    background-color: #e0e0e0; /* Darker gray hover effect */
+}
+
+/* Hidden pop-up box initially */
+.popup-box {
+    font-family: 'Press Start 2P', cursive;
+    position: fixed;
+    bottom: 60px; /* Position above the button */
+    right: 20px; /* Align with the left corner */
+    background-color: #fff; /* Button background color */
+    border: 3px solid #000; /* Button border style */
+    box-shadow: 5px 5px 0 #000, -5px 5px 0 #000; /* Pixelated box shadow */
+    padding: 10px 20px; /* Padding inside the box */
+    z-index: 1000; /* Ensure the box appears above other elements */
+    width: 200px; /* Width of the pop-up box */
+    color: #000; /* Text color */
+    display: none; /* Hide the pop-up initially */
+}
+
+/* Show the pop-up box on button hover */
+.open-button:hover + .popup-box {
+    display: block; /* Show the pop-up when hovering over the button */
+}
+
+/* Also show the pop-up box when hovering over it */
+.popup-box:hover {
+    display: block;
+}
+
+/* Ensure the pop-up hides when not hovering over the button or pop-up */

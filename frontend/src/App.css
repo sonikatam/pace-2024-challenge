@@ -28,11 +28,42 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* Styles for app container */
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Fade-in effect */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* Fade-out effect */
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Keyframes for fade-in */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+      opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+      opacity: 1;
   }
 }
+
+/* Keyframes for fade-out */
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+
+

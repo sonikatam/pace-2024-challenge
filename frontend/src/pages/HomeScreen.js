@@ -22,30 +22,30 @@ const HomeScreen = ({ onChoice }) => {
             {bubbleState === 0 && (
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '45vh', marginLeft: '30vw'}}
+                    style={{ width: '30vw', marginBottom: '45vh', marginLeft: '20vw'}}
                     onClick={handleClick}  // Add the click handler to the first bubble
                 >
-                    <p>Thank goodness you're here!</p>
+                    <p>Thank goodness you're here! I have something important to tell you.</p>
                 </div>
             )}
 
             {bubbleState === 1 && (
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '45vh', marginLeft: '30vw'}}
-                    onClick={handleClick}  // Add the click handler to the second bubble
+                    style={{ width: '30vw', marginBottom: '45vh', marginLeft: '20vw'}}
+                    onClick={handleClick}  
                 >
-                    <p>I have something important to tell you!</p>
+                    <p>Here is the situation, the Earth is dying and we need your help to save it using information from NASA's PACE satellite.</p>
                 </div>
             )}
 
             {bubbleState === 2 && (
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '45vh', marginLeft: '30vw'}}
-                    onClick={handleClick}  // Add the click handler to the third bubble
+                    style={{ width: '30vw', marginBottom: '45vh', marginLeft: '20vw'}}
+                    onClick={handleClick} 
                 >
-                    <p>Here is the situation:</p>
+                    <p>Make sure to make the most sustainable choices— the fate of the world is in your hands.</p>
                 </div>
             )}
 
