@@ -15,7 +15,7 @@ const PolarizationGood = ({ onChoice }) => {
                 </div>
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '-5vh', marginLeft: '10vw', fontSize: '12px'}}>
+                    style={{ width: '20vw', marginBottom: '-5vh', marginLeft: '5vw', fontSize: '12px'}}>
                     <p>Your selection resulted in an increased amount of ozone in the atmosphere as seen in the patch near the Africa. Great job!</p>
                 </div>
             </div>
