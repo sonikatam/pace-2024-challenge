@@ -9,6 +9,9 @@ import OzoneQuestion from './pages/OzoneQuestion';
 import IncreaseOzone from './pages/IncreaseOzone';
 import DecreaseOzone from './pages/DecreaseOzone';
 import NoChange from './pages/NoChange';
+import PhytoplanktonQuestion from './pages/PhytoplanktonQuestion';
+import IncreasePhytoplankton from './pages/IncreasePhytoplankton';
+import DecreasePhytoplankton from './pages/DecreasePhytoplankton';
 
 const routes = {
     scene1: Scene1,
@@ -20,7 +23,10 @@ const routes = {
     OzoneQuestion: OzoneQuestion,
     IncreaseOzone: IncreaseOzone,
     DecreaseOzone: DecreaseOzone,
-    NoChange: NoChange
+    NoChange: NoChange,
+    PhytoplanktonQuestion: PhytoplanktonQuestion,
+    IncreasePhytoplankton: IncreasePhytoplankton,
+    DecreasePhytoplankton: DecreasePhytoplankton
 };
 
 export default routes;

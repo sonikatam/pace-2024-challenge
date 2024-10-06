@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const OzoneQuestion = ({ onChoice }) => {
+const PhyloplanktonQuestion = ({ onChoice }) => {
     // Define an array of ozone-related questions
     const questions = [
         {
@@ -59,4 +59,4 @@ const OzoneQuestion = ({ onChoice }) => {
     );
 };
 
-export default OzoneQuestion;
+export default PhyloplanktonQuestion;

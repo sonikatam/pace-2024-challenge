@@ -1,58 +1,77 @@
-import React, { useEffect, useRef } from 'react';
-//import './IncreaseOzone.css'; // Import the CSS file for styles
+import React, { useState, useEffect } from 'react';
+import small_algae from './styles/assets/algae_smol.png';
+import big_algae from './styles/assets/algeo_big_boi.png';
+import ocean from './styles/assets/ocean_bg.png';
+import './styles/Bubbles.css';
+import './styles/IncreasePhytoplankton.css';
 
-const ozoneImages = [
-    './pngs/ozone_0.0.png',
-    './pngs/ozone_0.1.png',
-    './pngs/ozone_1.0.png',
-    './pngs/ozone_1.1.png'
-];
-
-const IncreaseOzone = () => {
-    const containerRef = useRef(null); // Create a reference for the container
-    const ozoneRefs = useRef([]); // Ref to hold the ozone image elements
-
-    // Function to create ozone images
-    const createOzoneImages = () => {
-        const container = containerRef.current;
-
-        // Create and animate ozone image elements
-        for (let i = 0; i < 3; i++) {
-            const ozoneImage = document.createElement('img');
-            ozoneImage.src = ozoneImages[0]; // Start with the first image
-            ozoneImage.className = 'ozone-image'; // Apply the class for styling
-            ozoneImage.style.position = 'absolute'; // Position them absolutely
-            ozoneImage.style.left = `${i * 100}px`; // Set initial position based on index
-            ozoneImage.style.top = '50px'; // Adjust the vertical position
-            container.appendChild(ozoneImage);
-            ozoneRefs.current[i] = ozoneImage; // Store the image reference
-        }
-    };
-
-    // Function to flip images between the ozone images
-    const flipOzoneImages = () => {
-        ozoneRefs.current.forEach((ozoneImage) => {
-            const randomIndex = Math.floor(Math.random() * ozoneImages.length);
-            ozoneImage.src = ozoneImages[randomIndex]; // Change the image source to a random ozone image
-        });
-    };
+const IncreasePhytoplankton = ({ onChoice }) => {
+    const [showBigAlgae, setShowBigAlgae] = useState(false); // State to toggle between small and big algae
+    const [showNextButton, setShowNextButton] = useState(false); // State to show the next button
 
     useEffect(() => {
-        createOzoneImages(); // Call the function to create ozone images
+        // Set a timer to change from small algae to big algae after 10 seconds
+        const timer = setTimeout(() => {
+            setShowBigAlgae(true);
+        }, 8000);
 
-        // Set an interval to flip the images every 500 milliseconds
-        const intervalId = setInterval(flipOzoneImages, 500);
+        // Set a timer to show the next button 1 second after the big algae appears
+        const nextButtonTimer = setTimeout(() => {
+            setShowNextButton(true);
+        }, 10000);
 
-        // Clean up the interval on component unmount
-        return () => clearInterval(intervalId);
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(nextButtonTimer);
+        };
     }, []);
 
     return (
-        <div className="increase-ozone-container" ref={containerRef}>
-            <h2>Increase Ozone Level</h2>
-            <p>Your action has contributed to an increase in ozone levels.</p>
+        <div className="algae-container">
+            <h1 className="title">Welcome to the Increase Phytoplankton Page</h1>
+            <p>Observe the changes in algae size!</p>
+
+            {/* Small algae images */}
+            {!showBigAlgae && (
+                <>
+                    <img
+                        src={small_algae}
+                        alt="small algae 1"
+                        className="increase small-algae bottom-left-image"
+                        style={{ width: '100px' }}
+                    />
+                    <img
+                        src={small_algae}
+                        alt="small algae 2"
+                        className="small-algae bottom-right-image"
+                        style={{ width: '100px' }}
+                    />
+                    <img
+                        src={small_algae}
+                        alt="small algae 3"
+                        className="small-algae middle-image"
+                        style={{ width: '100px' }}
+                    />
+                </>
+            )}
+
+            {/* Big algae image */}
+            {showBigAlgae && (
+                <img
+                    src={big_algae}
+                    alt="big algae"
+                    className={`big-algae ${showBigAlgae ? 'visible' : ''}`} // Add visible class based on state
+                />
+            )}
+
+            {/* Next button */}
+            {showNextButton && (
+                <button className="next-button" onClick={() => onChoice("startingMenu")}>
+                    Next
+                </button>
+            )}
         </div>
     );
 };
 
-export default IncreaseOzone;
+export default IncreasePhytoplankton;
