@@ -43,13 +43,13 @@ const IncreasePhytoplankton = ({ onChoice }) => {
                     <img
                         src={small_algae}
                         alt="small algae 2"
-                        className="small-algae bottom-right-image"
+                        className="increase small-algae bottom-right-image"
                         style={{ width: '100px' }}
                     />
                     <img
                         src={small_algae}
                         alt="small algae 3"
-                        className="small-algae middle-image"
+                        className="increase small-algae middle-image"
                         style={{ width: '100px' }}
                     />
                 </>
@@ -66,7 +66,7 @@ const IncreasePhytoplankton = ({ onChoice }) => {
 
             {/* Next button */}
             {showNextButton && (
-                <button className="next-button" onClick={() => onChoice("startingMenu")}>
+                <button className="next-button" onClick={() => onChoice("RSBad")}>
                     Next
                 </button>
             )}

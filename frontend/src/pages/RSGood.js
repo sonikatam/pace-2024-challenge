@@ -20,6 +20,14 @@ const RSGood = ({ onChoice }) => {
 
             {/* Scientist image */}
             <img src={scientistImage} alt="Scientist" className="scientist-image" />
+
+            {/* Choice Button */}
+            <div className="choices">
+                <button onClick={() => onChoice("questionScene")}>
+                    Go to Question Scene
+                </button>
+            </div>
+
         </div>
     );
 };

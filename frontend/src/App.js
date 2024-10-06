@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import HomeScreen from './pages/HomeScreen';
 import StartingMenu from './pages/StartingMenu'; // The starting menu scene
-import RSBad from './pages/RSBad'; // The new scene
 import IncreasePhytoplankton from './pages/IncreasePhytoplankton';
 import DecreasePhytoplankton from './pages/DecreasePhytoplankton';
 import IncreaseOzone from './pages/IncreaseOzone';
 import DecreaseOzone from './pages/DecreaseOzone';
 import NoChange from './pages/NoChange';
 import QuestionSelector from './pages/QuestionSelector';
+import RSBad from './pages/RSBad';
+import RSGood from './pages/RSGood';
+import PolarizationBad from './pages/PolarizationBad';
+import PolarizationGood from './pages/PolarizationGood';
 import './App.css'; // Import your CSS for transitions
 
 const App = () => {
@@ -43,12 +46,15 @@ const App = () => {
             {currentScene === 'homeScreen' && <HomeScreen onChoice={() => handleSceneChange('startingMenu')} />}
             {currentScene === 'startingMenu' && <StartingMenu onChoice={handleMoveToQuestionScene} />}
             {currentScene === 'QuestionSelector' && <QuestionSelector onChoice={handleQuestionSceneChange} />}
-            {currentScene === 'IncreaseOzone' && <IncreaseOzone />}
-            {currentScene === 'DecreaseOzone' && <DecreaseOzone />}
-            {currentScene === 'IncreasePhytoplankton' && <IncreasePhytoplankton />}
-            {currentScene === 'DecreasePhytoplankton' && <DecreasePhytoplankton />}
-            {currentScene === 'NoChange' && <NoChange />}
-            {currentScene === 'rsBad' && <RSBad />}
+            {currentScene === 'IncreaseOzone' && <IncreaseOzone onChoice={handleQuestionSceneChange} />}
+            {currentScene === 'DecreaseOzone' && <DecreaseOzone onChoice={handleQuestionSceneChange} />}
+            {currentScene === 'IncreasePhytoplankton' && <IncreasePhytoplankton onChoice={handleQuestionSceneChange} /> }
+            {currentScene === 'DecreasePhytoplankton' && <DecreasePhytoplankton onChoice={handleQuestionSceneChange} />}
+            {currentScene === 'NoChange' && <NoChange onChoice={handleMoveToQuestionScene} />}
+            {currentScene === 'RSBad' && <RSBad onChoice={handleMoveToQuestionScene} />}
+            {currentScene === 'RSGood' && <RSGood onChoice={handleMoveToQuestionScene} />}
+            {currentScene === 'PolarizationBad' && <PolarizationBad onChoice={handleMoveToQuestionScene} />}
+            {currentScene === 'PolarizationGood' && <PolarizationGood onChoice={handleMoveToQuestionScene} />}
         </div>
     );
 };

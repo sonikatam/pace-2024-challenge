@@ -12,6 +12,8 @@ import NoChange from './pages/NoChange';
 import PhytoplanktonQuestion from './pages/PhytoplanktonQuestion';
 import IncreasePhytoplankton from './pages/IncreasePhytoplankton';
 import DecreasePhytoplankton from './pages/DecreasePhytoplankton';
+import RSBad from './RSBad';
+import RSGood from '.RSGood';
 
 const routes = {
     scene1: Scene1,
@@ -26,7 +28,9 @@ const routes = {
     NoChange: NoChange,
     PhytoplanktonQuestion: PhytoplanktonQuestion,
     IncreasePhytoplankton: IncreasePhytoplankton,
-    DecreasePhytoplankton: DecreasePhytoplankton
+    DecreasePhytoplankton: DecreasePhytoplankton,
+    RSBad: RSBad,
+    RSGood: RSGood
 };
 
 export default routes;

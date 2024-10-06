@@ -93,7 +93,7 @@ const DecreasePhytoplankton = ({ onChoice }) => {
 
             {/* Next button */}
             {showNextButton && (
-                <button className="next-button" onClick={() => onChoice("startingMenu")}>
+                <button className="next-button" onClick={() => onChoice("RSGood")}>
                     Next
                 </button>
             )}

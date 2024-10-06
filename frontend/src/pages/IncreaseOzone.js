@@ -1,56 +1,29 @@
-import React, { useEffect, useRef } from 'react';
-//import './IncreaseOzone.css'; // Import the CSS file for styles
+import React, { useState, useEffect } from 'react';
 
-const ozoneImages = [
-    './pngs/ozone_0.0.png',
-    './pngs/ozone_0.1.png',
-    './pngs/ozone_1.0.png',
-    './pngs/ozone_1.1.png'
-];
+const IncreaseOzone = ({ onChoice }) => {
+    const [showNextButton, setShowNextButton] = useState(false); // State to show the next button
 
-const IncreaseOzone = () => {
-    const containerRef = useRef(null); // Create a reference for the container
-    const ozoneRefs = useRef([]); // Ref to hold the ozone image elements
-
-    // Function to create ozone images
-    const createOzoneImages = () => {
-        const container = containerRef.current;
-
-        // Create and animate ozone image elements
-        for (let i = 0; i < 3; i++) {
-            const ozoneImage = document.createElement('img');
-            ozoneImage.src = ozoneImages[0]; // Start with the first image
-            ozoneImage.className = 'ozone-image'; // Apply the class for styling
-            ozoneImage.style.position = 'absolute'; // Position them absolutely
-            ozoneImage.style.left = `${i * 100}px`; // Set initial position based on index
-            ozoneImage.style.top = '50px'; // Adjust the vertical position
-            container.appendChild(ozoneImage);
-            ozoneRefs.current[i] = ozoneImage; // Store the image reference
-        }
-    };
-
-    // Function to flip images between the ozone images
-    const flipOzoneImages = () => {
-        ozoneRefs.current.forEach((ozoneImage) => {
-            const randomIndex = Math.floor(Math.random() * ozoneImages.length);
-            ozoneImage.src = ozoneImages[randomIndex]; // Change the image source to a random ozone image
-        });
-    };
-
+    // Use effect to show the next button after a certain time (example: 6 seconds)
     useEffect(() => {
-        createOzoneImages(); // Call the function to create ozone images
+        const timer = setTimeout(() => {
+            setShowNextButton(true);
+        }, 6000); // Adjust this timing as needed
 
-        // Set an interval to flip the images every 500 milliseconds
-        const intervalId = setInterval(flipOzoneImages, 500);
-
-        // Clean up the interval on component unmount
-        return () => clearInterval(intervalId);
+        return () => clearTimeout(timer); // Cleanup timer on unmount
     }, []);
 
     return (
-        <div className="increase-ozone-container" ref={containerRef}>
+        <div>
             <h2>Increase Ozone Level</h2>
-            <p>Your action has contributed to an increase in ozone levels.</p>
+            <p>Your action has helped increase ozone levels.</p>
+            {/* You can add more details or actions related to this scenario */}
+
+            {/* Next button */}
+            {showNextButton && (
+                <button className="next-button" onClick={() => onChoice("PolarizationGood")}>
+                    Next
+                </button>
+            )}
         </div>
     );
 };

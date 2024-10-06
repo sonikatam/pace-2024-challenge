@@ -1,11 +1,13 @@
 import React from 'react';
 
-const NoChange = () => {
+const NoChange = ({ onChoice }) => {
     return (
-        <div>
-            <h2>No Change</h2>
-            <p>Your action has not had any great positive or negative impact.</p>
-            {/* You can add more details or actions related to this scenario */}
+        <div className="no-change-container">
+            <h1>No Change Scene</h1>
+            <p>Details about the no change scenario.</p>
+
+            {/* Button to go back or make a choice */}
+            <button onClick={() => onChoice("questionScene")}>Go Back</button>
         </div>
     );
 };
