@@ -3,7 +3,7 @@ import './styles/Scene2.css';  // Import the Scene2 CSS
 import './styles/Bubbles.css';  // Import the Bubbles CSS
 import centeredImage from './styles/assets/pace_logo.png';
 
-const Scene2 = ({ onChoice }) => {
+const StartingMenu = ({ onChoice }) => {
     return (
         <div className="scene2-container">
             {/* Add text */}
@@ -13,7 +13,7 @@ const Scene2 = ({ onChoice }) => {
 
             {/* Wrap the button inside a div with class "choices" */}
             <div className="choices">
-                <button onClick={() => onChoice("scene3")}>
+                <button onClick={() => onChoice("rsBad")}>
                     Start your adventure!
                 </button>
             </div>
@@ -31,4 +31,4 @@ const Scene2 = ({ onChoice }) => {
     );
 };
 
-export default Scene2;
+export default StartingMenu;
