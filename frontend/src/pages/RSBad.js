@@ -13,8 +13,8 @@ const RSBad = ({ onChoice }) => {
                 </div>
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '20vh', marginLeft: '0vw'}}>
-                    <p>remote something something</p>
+                    style={{ width: '20vw', marginBottom: '-5vh', marginLeft: '10vw', fontSize: '12px'}}>
+                    <p>Your selection resulted in an increased amount of phytoplankton in the ocean as seen in the patch near the Brazil region. Oh no!</p>
                 </div>
             </div>
 

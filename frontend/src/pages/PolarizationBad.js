@@ -15,8 +15,8 @@ const PolarizationBad = ({ onChoice }) => {
                 </div>
                 <div 
                     className="bubble right bottom shadow" 
-                    style={{ width: '20vw', marginBottom: '20vh', marginLeft: '0vw'}}>
-                    <p>polarization something something</p>
+                    style={{ width: '20vw', marginBottom: '-5vh', marginLeft: '10vw', fontSize: '12px'}}>
+                    <p>Your selection resulted in a decreased amount of ozone in the atmosphere as seen in the patch near China. Oh no!</p>
                 </div>
             </div>
 
