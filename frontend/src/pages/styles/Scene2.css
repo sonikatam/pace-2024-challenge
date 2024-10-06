@@ -16,3 +16,19 @@
     position: relative;
     overflow: hidden; /* Hide any overflow */
 }
+
+/* Text styles */
+.scene2-text {
+    color: white; /* Text color */
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Use pixelated font */
+    font-size: 60px; /* Adjust font size as needed */
+    margin-bottom: 85vh; /* Space below the heading */
+}
+
+.scene2-description {
+    color: white; /* Text color */
+    font-size: 20px; /* Font size */
+    text-align: center; /* Center the text */
+    max-width: 600px; /* Limit width for readability */
+}

@@ -1,13 +1,14 @@
 import React from 'react';
 import './styles/Scene2.css';  // Import the Scene2 CSS
 
-const StartingMenu = () => {
+const Scene2 = () => {
     return (
         <div className="scene2-container">
-            {/* Content of Scene 2 goes here */}
+            {/* Add text */}
+            <h1 className="scene2-text">CHANGE OF</h1>
+            {/* Additional content can go here */}
         </div>
     );
 };
 
-export default StartingMenu;
-
+export default Scene2;
