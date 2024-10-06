@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/QuestionSelector.css'; // Ensure to import the bubble styles
 
 const QuestionSelector = ({ onChoice }) => {
     // Define an array of ozone-related questions
@@ -123,27 +124,28 @@ const QuestionSelector = ({ onChoice }) => {
         }
     ];
 
-    // State to store the randomly selected question
     const [currentQuestion, setCurrentQuestion] = useState(null);
 
-    // Select a random question when the component mounts
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * questions.length);
         setCurrentQuestion(questions[randomIndex]);
     }, []);
 
-    // Render the component with the random question
     return (
-        <div>
+        <div className="rs-bad-container">
             {currentQuestion && (
-                <>
-                    <p>{currentQuestion.text}</p>
-                    {currentQuestion.options.map((option, index) => (
-                        <button key={index} onClick={() => onChoice(option.scene)}>
-                            {option.label}
-                        </button>
-                    ))}
-                </>
+                <div className="content-container">
+                    <div className="question-container">
+                        <p className="question-text">{currentQuestion.text}</p>
+                    </div>
+                    <div className="choices">
+                        {currentQuestion.options.map((option, index) => (
+                            <button key={index} onClick={() => onChoice(option.scene)}>
+                                {option.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             )}
         </div>
     );
