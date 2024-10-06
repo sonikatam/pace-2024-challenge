@@ -6,24 +6,20 @@ import DecreasePhytoplankton from './pages/DecreasePhytoplankton';
 
 const App = () => {
     const [currentScene, setCurrentScene] = useState('homeScreen');  // State to track the current scene
+    const [fade, setFade] = useState('fade-in');  // State for fade-in/fade-out transitions
 
     const handleSceneChange = () => {
-        setCurrentScene('startingMenu');  // Change to StartingMenu scene
-    };
-
-    const handleStartingScreenChange = () => {
-        setCurrentScene('DecreasePhytoplankton');  // Change to Increase Phytoplankton scene
+        setFade('fade-out');  // Trigger fade-out animation
+        setTimeout(() => {
+            setCurrentScene('startingMenu');  // After fade-out, change to the next scene
+            setFade('fade-in');  // Start fade-in animation for new scene
+        }, 500);  // 500ms duration for fade-out before switching scenes
     };
 
     return (
-        <div>
+        <div className={`app-container ${fade}`}>
             {currentScene === 'homeScreen' && <HomeScreen onChoice={handleSceneChange} />}
-
             {currentScene === 'startingMenu' && <StartingMenu />}
-
-            {currentScene === 'IncreasePhytoplankton' && <IncreasePhytoplankton onChoice={handleSceneChange} />}
-
-            {currentScene === 'DecreasePhytoplankton' && <DecreasePhytoplankton onChoice={handleSceneChange} />}
         </div>
     );
 };
