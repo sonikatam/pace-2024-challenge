@@ -1,6 +1,6 @@
 // src/routes.js
-import Scene1 from './pages/Scene1';
-import Scene2 from './pages/Scene2';
+import Scene1 from './pages/HomeScreen';
+import Scene2 from './pages/StartingMenu';
 import Scene3 from './pages/Scene3';
 import Scene4 from './pages/Scene4';
 import Scene5 from './pages/Scene5';
